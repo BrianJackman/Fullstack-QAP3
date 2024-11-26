@@ -1,0 +1,24 @@
+<%-- 
+Fullstack QAP 3
+By: Brian Jackman  
+2024/11/29
+--%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing</title>
+</head>
+<body>
+    <h1>Welcome <%= user.username %></h1>
+    <% if (user.role === 'admin') { %>
+        <h2>All Users</h2>
+        <ul>
+            <% users.forEach(u => { %>
+                <li><%= u.username %> - <%= u.email %> - <%= u.role %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+    <a href="/logout">Logout</a>
+</body>
+</html>
