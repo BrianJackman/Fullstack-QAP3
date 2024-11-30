@@ -2,17 +2,22 @@
 <html>
 <head>
     <title>Landing</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
-    <h1>Welcome <%= user.username %></h1>
-    <% if (user.role === 'admin') { %>
-        <h2>All Users</h2>
-        <ul>
-            <% users.forEach(u => { %>
-                <li><%= u.username %> - <%= u.email %> - <%= u.role %></li>
-            <% }) %>
-        </ul>
-    <% } %>
-    <a href="/logout">Logout</a>
+    <div class="container">
+        <h1>Welcome <%= user.username %></h1>
+        <% if (user.role === 'admin') { %>
+            <h2>All Users</h2>
+            <ul>
+                <% users.forEach(u => { %>
+                    <li><%= u.username %> - <%= u.email %> - <%= u.role %></li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>This is your dashboard.</p>
+        <% } %>
+        <a href="/logout">Logout</a>
+    </div>
 </body>
 </html>
